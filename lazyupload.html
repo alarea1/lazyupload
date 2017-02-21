@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+
+<html>
+<head>
+ <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.0/jquery.min.js">
+</script>
+ <meta charset="utf-8">
+ <style type="text/css">
+ 	ul,li{
+ 		list-style:none;
+ 	}
+ 	.container{
+ 		width:800px;
+ 		margin: 0 auto;
+ 	}
+ 	.container:after{
+ 		content:'';
+ 		display: block;
+ 		clear:both;
+ 	}
+ 	.container li{
+ 		float:left;
+ 		margin: 10px 10px;
+ 	}
+ 	.container li img{
+ 		width:380px;
+ 		height:380px;
+ 	}
+ </style>
+</head>
+
+	<body>
+	<ul class="container">
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://desktop.kole8.com/desktop/desk_file-11/8/18/2009/12/2009122322001410.jpg" alt=""></li>
+	<li><img src="" data-src="http://img1.gtimg.com/ent/pics/hv1/103/96/1981/128839108.jpg" alt=""></li>
+	<li><img src="" data-src="http://pic6.nipic.com/20100311/1295091_091318795162_2.jpg" alt=""></li>
+	<li><img src="" data-src="http://pic.gz2010.cn/allimg/160118/1ZU94152-0.png" alt=""></li>
+	<li><img src="" data-src="http://www.cmochina.com.cn/files/images/567e074f477e2.JPG.jpg" alt=""></li>
+	<li><img src="" data-src="http://i-3.yxdown.com/2015/8/6/c551ce6c-c58b-482e-a7ea-c6c119fbe665.jpg" alt=""></li>
+	<li><img src="" data-src="http://img1.gamersky.com/image2016/01/20160103_zj_235_4/gamersky_02small_04_2016131110955.jpg" alt=""></li>
+	<li><img src="" data-src="http://i.epochtimes.com/assets/uploads/2016/12/static1.squarespace-600x400.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	<li><img src="" data-src="http://www.52desktop.cn/upimg/allimg/090419/12401553A260391D9.jpg" alt=""></li>
+	</ul>
+	<script type="text/javascript">
+
+		$(window).on('scroll',function(){
+			$('.container img').not('.shown').each(function(){
+				
+				if(isShow($(this))){
+					showImg($(this))
+				}
+			})
+		}) 
+	
+		function isShow($node){
+			var windowHeight=$(window).height(),
+				scrollTop=$(window).scrollTop(),
+				offsetTop = $node.offset().top,
+				nodeHeight = $node.height();
+			if(windowHeight+scrollTop>offsetTop&&scrollTop<offsetTop+nodeHeight){return true;}
+			else{return false;}
+		}
+		function showImg($imgs){
+			$imgs.each(function(){
+				var imgUrl = $(this).attr('data-src');
+			$(this).attr('src',imgUrl);
+			$(this).addClass('shown');
+			})
+			}
+			
+	
+	</script>
+	</body>
+
+</html>
